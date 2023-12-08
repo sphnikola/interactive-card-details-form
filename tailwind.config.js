@@ -13,6 +13,10 @@ export default {
         "Dark-grayish-violet": "hsl(279, 6%, 55%)",
         "Very-dark-violet": "hsl(278, 68%, 11%)",
       },
+      backgroundImage: {
+        "bg-main-mobile": "url('/src/assets/images/bg-main-mobile.png')",
+        "bg-main-desktop": "url('/src/assets/images/bg-main-desktop.png')",
+      },
     },
   },
   plugins: [],

@@ -1,9 +1,15 @@
+import LeftSection from "./LeftSection";
+import RightSection from "./RightSection";
+
 function App() {
   return (
     <>
-      <div className="font-grotesk">
-        <h1 className="underline">hello world</h1>
-      </div>
+      <main className="font-grotesk">
+        <div className="flex flex-col items-center">
+          <LeftSection />
+          <RightSection />
+        </div>
+      </main>
     </>
   );
 }
