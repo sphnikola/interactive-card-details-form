@@ -1,5 +1,6 @@
 import card_logo from "./assets/images/card-logo.svg";
 import card_front from "./assets/images/bg-card-front.png";
+import card_back from "./assets/images/bg-card-back.png";
 
 export default function LeftSection() {
   return (
@@ -19,11 +20,14 @@ export default function LeftSection() {
           />
           {/* card container */}
           <div>
+            {/* image for the front of the card */}
             <img src={card_front} />
           </div>
         </div>
         {/* back card */}
-        <div></div>
+        <div className="w-[280px] translate-y-[70px] relative">
+          <img src={card_back} />
+        </div>
       </div>
     </div>
   );
