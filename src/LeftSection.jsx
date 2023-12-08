@@ -35,7 +35,7 @@ export default function LeftSection() {
               {/* date */}
               <span>
                 {/* span for month */}
-                <span>00</span> /{/* span for year */}
+                <span>00</span> / {/* span for year */}
                 <span>00</span>
               </span>
             </div>
