@@ -13,8 +13,12 @@ export default function LeftSection() {
         className="flex flex-col-reverse absolute left-[61%] top-[60%] -translate-x-[50%] -translate-y-[50%]
       md:flex-col md:top-[50%] md:left-[100%] md:gap-8"
       >
-        {/* front card container */}
-        <div className="z-50 w-[280px] relative -translate-x-[100px] md:w-[300px]">
+        {/* front card container
+        remember to increase size for lagrger screens and corresponding 
+        info that comes with it.
+         */}
+
+        <div className="z-50 w-[280px] relative -translate-x-[100px] md:w-[300px] ">
           {/* card logo */}
           <img
             src={card_logo}
