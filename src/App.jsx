@@ -6,7 +6,7 @@ function App() {
     <>
       <main className="font-grotesk">
         <div className="flex flex-col items-center md:flex-row">
-          <LeftSection />
+          {/* <LeftSection /> */}
           <RightSection />
         </div>
       </main>

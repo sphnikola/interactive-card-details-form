@@ -2,7 +2,8 @@ import card_logo from "./assets/images/card-logo.svg";
 import card_front from "./assets/images/bg-card-front.png";
 import card_back from "./assets/images/bg-card-back.png";
 
-export default function LeftSection() {
+export default function LeftSection(props) {
+  const SHOW = "spencer";
   return (
     <div
       className=" w-full min-h-[30vh] bg-bg-main-mobile bg-center bg-cover bg-no-repeat relative
@@ -29,18 +30,41 @@ export default function LeftSection() {
           <div>
             {/* image for the front of the card */}
             <img src={card_front} />
-            <h1 className="text-lg absolute bottom-[5rem] left-[1rem] tracking-[2px]">
-              0000 0000 0000 0000
-            </h1>
+            {props.cardNumber === "" ? (
+              <h1 className="text-lg absolute bottom-[5rem] left-[1rem] tracking-[2px]">
+                0000 0000 0000 0000
+              </h1>
+            ) : (
+              <h1 className="text-lg absolute bottom-[5rem] left-[1rem] tracking-[2px]">
+                {props.cardNumber}
+              </h1>
+            )}
+            {/* <h1 className="text-lg absolute bottom-[5rem] left-[1rem] tracking-[2px]">
+            0000 0000 0000 0000
+            </h1> */}
             {/* front card name and expiry */}
             <div className="flex justify-between absolute bottom-[2rem] left-[1rem] right-[3rem]">
               {/* name */}
-              <span>juliana robbins</span>
+              {props.name === "" ? (
+                <span>Jane Appleseed</span>
+              ) : (
+                <span>{props.name}</span>
+              )}
+              {/* <span>{props.name} </span> */}
               {/* date */}
               <span>
                 {/* span for month */}
-                <span>00</span> / {/* span for year */}
-                <span>00</span>
+                {props.month === "" ? (
+                  <span>00</span>
+                ) : (
+                  <span>{props.month}</span>
+                )}
+                / {/* span for year */}
+                {props.year === "" ? (
+                  <span>00</span>
+                ) : (
+                  <span>{props.year}</span>
+                )}
               </span>
             </div>
           </div>
@@ -48,7 +72,11 @@ export default function LeftSection() {
         {/* back card */}
         <div className="w-[280px] translate-y-[70px] relative md:w-[300px]">
           <img src={card_back} />
-          <span className="absolute top-[42%] right-[12%]">000</span>
+          {props.cvc === "" ? (
+            <span className="absolute top-[42%] right-[12%]">000</span>
+          ) : (
+            <span className="absolute top-[42%] right-[12%]">{props.cvc}</span>
+          )}
         </div>
       </div>
     </div>
