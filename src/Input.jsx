@@ -13,6 +13,7 @@ export function Input(props) {
           value={props.value}
           placeholder={props.placeholder}
           onChange={props.onChange}
+          maxLength={props.max}
           required
         />
       </div>

@@ -18,11 +18,20 @@ export default function RightSection() {
     });
   };
 
+  const m = 16;
+  if (inputFields.cardNumber.length > m) {
+    inputFields.cardNumber = inputFields.cardNumber.slice(0, m);
+  }
+
+  const num = inputFields.cardNumber
+    .replace(/\W/gi, "")
+    .replace(/(.{4})/g, "$1 ");
+
   return (
     <>
       <LeftSection
         name={inputFields.name}
-        cardNumber={inputFields.cardNumber}
+        cardNumber={num}
         month={inputFields.MM}
         year={inputFields.YY}
         cvc={inputFields.CVC}
@@ -47,6 +56,7 @@ export default function RightSection() {
               type="number"
               name="cardNumber"
               value={inputFields.cardNumber}
+              max={m}
               placeholder="1234 5678 9123 0000"
               onChange={handleChange}
             />
