@@ -18,9 +18,22 @@ export default function RightSection() {
     });
   };
 
-  const m = 16;
-  if (inputFields.cardNumber.length > m) {
-    inputFields.cardNumber = inputFields.cardNumber.slice(0, m);
+  const cardNumberMax = 16;
+  if (inputFields.cardNumber.length > cardNumberMax) {
+    inputFields.cardNumber = inputFields.cardNumber.slice(0, cardNumberMax);
+  }
+
+  const dateMax = 2;
+  if (inputFields.MM.length > dateMax) {
+    inputFields.MM = inputFields.MM.slice(0, dateMax);
+  }
+  if (inputFields.YY.length > dateMax) {
+    inputFields.YY = inputFields.YY.slice(0, dateMax);
+  }
+
+  const cvcmax = 3;
+  if (inputFields.CVC.length > cvcmax) {
+    inputFields.CVC = inputFields.CVC.slice(0, cvcmax);
   }
 
   const num = inputFields.cardNumber
@@ -56,7 +69,6 @@ export default function RightSection() {
               type="number"
               name="cardNumber"
               value={inputFields.cardNumber}
-              max={m}
               placeholder="1234 5678 9123 0000"
               onChange={handleChange}
             />
