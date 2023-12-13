@@ -1,13 +1,11 @@
-import LeftSection from "./LeftSection";
-import RightSection from "./RightSection";
+import Container from "./Container";
 
 function App() {
   return (
     <>
       <main className="font-grotesk">
         <div className="flex flex-col items-center md:flex-row">
-          {/* <LeftSection /> */}
-          <RightSection />
+          <Container />
         </div>
       </main>
     </>

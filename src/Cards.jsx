@@ -2,7 +2,7 @@ import card_logo from "./assets/images/card-logo.svg";
 import card_front from "./assets/images/bg-card-front.png";
 import card_back from "./assets/images/bg-card-back.png";
 
-export default function LeftSection(props) {
+export default function Cards(props) {
   return (
     <div
       className=" w-full min-h-[30vh] bg-bg-main-mobile bg-center bg-cover bg-no-repeat relative
@@ -14,42 +14,38 @@ export default function LeftSection(props) {
       md:flex-col md:top-[50%] md:left-[100%] md:gap-8"
       >
         {/* front card container
-        remember to increase size for lagrger screens and corresponding 
-        info that comes with it.
          */}
 
-        <div className="z-50 w-[280px] relative -translate-x-[100px] md:w-[300px] ">
+        <div className="z-50 w-[280px] relative -translate-x-[100px] md:w-[300px] lg:w-[500px]">
           {/* card logo */}
           <img
             src={card_logo}
             alt="card-logo"
-            className="w-[50px] absolute top-4 left-4"
+            className="w-[50px] absolute top-4 left-4 lg:w-auto"
           />
 
           <div>
             {/* image for the front of the card */}
-            <img src={card_front} />
+            <img src={card_front} className="lg:w-full" />
             {props.cardNumber === "" ? (
-              <h1 className="text-lg absolute bottom-[5rem] left-[1rem] tracking-[2px]">
+              <h1 className="text-lg absolute bottom-[5rem] left-[1rem] tracking-[2px] lg:text-3xl">
                 0000 0000 0000 0000
               </h1>
             ) : (
-              <h1 className="text-lg absolute bottom-[5rem] left-[1rem] tracking-[2px]">
+              <h1 className="text-lg absolute bottom-[5rem] left-[1rem] tracking-[2px] lg:text-3xl">
                 {props.cardNumber}
               </h1>
             )}
-            {/* <h1 className="text-lg absolute bottom-[5rem] left-[1rem] tracking-[2px]">
-            0000 0000 0000 0000
-            </h1> */}
+
             {/* front card name and expiry */}
-            <div className="flex justify-between absolute bottom-[2rem] left-[1rem] right-[3rem]">
+            <div className="flex justify-between absolute bottom-[2rem] left-[1rem] right-[3rem] lg:text-xl">
               {/* name */}
               {props.name === "" ? (
                 <span>Jane Appleseed</span>
               ) : (
                 <span>{props.name}</span>
               )}
-              {/* <span>{props.name} </span> */}
+
               {/* date */}
               <span>
                 {/* span for month */}
@@ -69,8 +65,8 @@ export default function LeftSection(props) {
           </div>
         </div>
         {/* back card */}
-        <div className="w-[280px] translate-y-[70px] relative md:w-[300px]">
-          <img src={card_back} />
+        <div className="w-[280px] translate-y-[70px] relative md:w-[300px] lg:w-[500px] lg:text-xl">
+          <img src={card_back} className="lg:w-full" />
           {props.cvc === "" ? (
             <span className="absolute top-[42%] right-[12%]">000</span>
           ) : (

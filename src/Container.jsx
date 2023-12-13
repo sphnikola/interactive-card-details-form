@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Input } from "./Input";
-import LeftSection from "./LeftSection";
+import Cards from "./Cards";
 
-export default function RightSection() {
+export default function Container() {
   const [inputFields, setInputFiels] = useState({
     name: "",
     cardNumber: "",
@@ -42,7 +42,7 @@ export default function RightSection() {
 
   return (
     <>
-      <LeftSection
+      <Cards
         name={inputFields.name}
         cardNumber={num}
         month={inputFields.MM}
